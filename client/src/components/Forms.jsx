@@ -41,11 +41,9 @@ const Forms = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
       navigate("/chats");
     } catch (err) {
-      toast.error(err.response.data.message,);
+      toast.error(err.response.data.message);
     }
   };
-
-  const cloudname = process.env.CLOUDINARY_CLOUD_NAME
 
   const postDetails = (pics) => {
     if (pics === undefined) {
@@ -58,7 +56,7 @@ const Forms = () => {
       data.append("file", pics);
       data.append("upload_preset", "fiverr");
       data.append("cloud_name", "dkx1fkobd");
-      fetch(`https://api.cloudinary.com/v1_1/${cloudname}/image/upload`, {
+      fetch(`https://api.cloudinary.com/v1_1/dkx1fkobd/image/upload`, {
         method: "post",
         body: data,
       })
