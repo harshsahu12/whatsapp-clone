@@ -1,10 +1,11 @@
 import { ArrowBack } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
-import { ChatState, SERVERURL } from "../context/ChatProvider.jsx";
+import { ChatState } from "../context/ChatProvider.jsx";
 import axios from "axios";
 import UserListItem from "./UserListItem";
 import { toast } from "react-toastify";
+import { SERVERURL } from "../config/helper"
 
 const ContactMenu = ({ onClick }) => {
   const [allUser, setAllUser] = useState([]);
@@ -24,7 +25,7 @@ const ContactMenu = ({ onClick }) => {
         },
       };
 
-      const { data } = await axios.get(`/user`, config);
+      const { data } = await axios.get(`${SERVERURL}/user`, config);
 
       // Filter out the logged-in user
       const filteredUsers = data.filter(u => u._id !== user._id);
@@ -44,7 +45,7 @@ const ContactMenu = ({ onClick }) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`/chat`, { userId }, config);
+      const { data } = await axios.post(`${SERVERURL}/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);

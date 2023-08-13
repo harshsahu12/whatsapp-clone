@@ -40,6 +40,4 @@ export const ChatState = () => {
   return useContext(ChatContext);
 };
 
-export const SERVERURL = "https://whatsapp-clone-091b.onrender.com"
-
 export default ChatProvider;

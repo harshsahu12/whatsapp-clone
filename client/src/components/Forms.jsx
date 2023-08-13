@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { SERVERURL } from "../context/ChatProvider";
+import { SERVERURL } from "../config/helper";
 
 const Forms = () => {
   const [signIn, setSignIn] = useState(false);
@@ -27,7 +27,7 @@ const Forms = () => {
         },
       };
       const { data } = await axios.post(
-        `/user`,
+        `${SERVERURL}/user`,
         {
           name,
           email,
@@ -90,7 +90,7 @@ const Forms = () => {
       };
 
       const { data } = await axios.post(
-        `/user/login`,
+        `${SERVERURL}/user/login`,
         { email, password },
         config
       );

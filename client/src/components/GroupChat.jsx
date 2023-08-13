@@ -3,9 +3,10 @@ import { IconButton } from '@mui/material';
 import { useEffect, useState } from 'react';
 import UserListItem from './UserListItem';
 import axios from 'axios';
-import { ChatState, SERVERURL } from '../context/ChatProvider';
+import { ChatState } from '../context/ChatProvider';
 import { toast } from 'react-toastify';
 import UserAdded from './UserAdded';
+import { SERVERURL } from '../config/helper';
 
 const GroupChat = ({ onClick }) => {
     const [groupChatName, setGroupChatName] = useState('');
@@ -36,7 +37,7 @@ const GroupChat = ({ onClick }) => {
                     Authorization: `Bearer ${user.token}`,
                 },
             };
-            const { data } = await axios.get(`/user?search=${query}`, config);
+            const { data } = await axios.get(`${SERVERURL}/user?search=${query}`, config);
 
             const filteredUsers = data.filter(u => u._id !== user._id);
           

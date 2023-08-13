@@ -1,4 +1,4 @@
-import { ChatState, SERVERURL } from "../context/ChatProvider"
+import { ChatState } from "../context/ChatProvider"
 import { Avatar, IconButton } from "@mui/material"
 import { Add, Mic, MoreVert, Search, SentimentSatisfied } from '@mui/icons-material'
 import { getSender, getSenderImg } from '../config/ChatLogic'
@@ -9,6 +9,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Messages from "./Messages"
 import io from 'socket.io-client'
+import { SERVERURL } from "../config/helper"
 
 const ENDPOINT = SERVERURL;
 let socket, selectedChatCompare;
@@ -38,7 +39,7 @@ const ChatContainer = ({ setFetchAgain, fetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `/chat/groupremove`,
+        `${SERVERURL}/chat/groupremove`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -66,7 +67,7 @@ const ChatContainer = ({ setFetchAgain, fetchAgain }) => {
         }
       }
 
-      const {data} = await axios.get(`/message/${selectedChat._id}`, config)
+      const {data} = await axios.get(`${SERVERURL}/message/${selectedChat._id}`, config)
       setMessage(data)
       socket.emit('join chat', selectedChat._id)
     } catch (error) {
@@ -121,7 +122,7 @@ const ChatContainer = ({ setFetchAgain, fetchAgain }) => {
 
         setNewMessage("")
 
-        const { data } = await axios.post(`=/message`, {
+        const { data } = await axios.post(`${SERVERURL}/message`, {
           content: newMessage,
           chatId: selectedChat._id,
         }, config)

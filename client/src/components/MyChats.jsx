@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Avatar } from '@mui/material'
 import { getSender, getSenderImg } from "../config/ChatLogic"
 import { toast } from 'react-toastify'
+import { SERVERURL } from '../config/helper'
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState()
@@ -24,7 +25,7 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get(`/chat`, config);
+      const { data } = await axios.get(`${SERVERURL}/chat`, config);
       setChats(data);
 
     } catch (error) {

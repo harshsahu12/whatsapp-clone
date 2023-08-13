@@ -7,6 +7,7 @@ import UserListItem from "./UserListItem"
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { useNavigate } from "react-router-dom"
+import { SERVERURL } from "../config/helper"
 
 const GroupInfo = ({ handleFunction, fetchAgain, setFetchAgain, fetchMessages }) => {
     const { user, selectedChat, setSelectedChat } = ChatState()
@@ -30,7 +31,7 @@ const GroupInfo = ({ handleFunction, fetchAgain, setFetchAgain, fetchMessages })
               },
             };
             const { data } = await axios.put(
-              `/chat/groupremove`,
+              `${SERVERURL}/chat/groupremove`,
               {
                 chatId: selectedChat._id,
                 userId: user1._id,
