@@ -1,1 +1,1 @@
-export const SERVERURL = "https://whatsapp-clone-6530.onrender.com/api"
+export const SERVERURL = "http://localhost:5000/api"
