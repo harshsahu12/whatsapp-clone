@@ -45,6 +45,8 @@ const Forms = () => {
     }
   };
 
+  const cloudname = process.env.CLOUDINARY_CLOUD_NAME
+
   const postDetails = (pics) => {
     if (pics === undefined) {
       toast.warn("Please Select an Image!");
@@ -56,7 +58,7 @@ const Forms = () => {
       data.append("file", pics);
       data.append("upload_preset", "fiverr");
       data.append("cloud_name", "dkx1fkobd");
-      fetch(`https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload`, {
+      fetch(`https://api.cloudinary.com/v1_1/${cloudname}/image/upload`, {
         method: "post",
         body: data,
       })
