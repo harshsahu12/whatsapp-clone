@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  background-color: #111b21;
+}
+
+@layer components {
+  .contactInput {
+    @apply outline-none bg-slate-400/10 w-[300px] rounded-sm border-b px-2 py-2 lg:px-6 lg:py-3 border-[#00a884] placeholder:text-sm lg:placeholder:text-base text-gray-500 placeholder-gray-500 transition-all focus:border-[#00a884]/40 focus:text-[#00a884]/80 hover:border-[#00a884]/40;
+  }
+}
+
+.gradient{
+  width: 100%;
+  z-index: 1;
+  height: 77.5vh;
+  background: rgb(17,27,33, 0.2);
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6) 60%,
+      rgba(0, 0, 0, 0) 90%,
+      rgba(0, 0, 0, 0.9) 100%,
+  );
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown {
+  animation: slideDown 0.2s ease-out;
+}
+
+.animate-dropdown {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.animate-dropdown.open {
+  transform: translateY(0);
+}
+
+
