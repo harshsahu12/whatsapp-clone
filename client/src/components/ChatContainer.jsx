@@ -11,7 +11,7 @@ import Messages from "./Messages"
 import io from 'socket.io-client'
 import { SERVERURL } from "../config/helper"
 
-const ENDPOINT = SERVERURL;
+const ENDPOINT = "https://whatsapp-clone-6530.onrender.com";
 let socket, selectedChatCompare;
 
 const ChatContainer = ({ setFetchAgain, fetchAgain }) => {
