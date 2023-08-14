@@ -89,7 +89,7 @@ const GroupChat = ({ onClick }) => {
     }, [search]);
 
     return (
-        <div className="flex-[0.3] w-[450px] flex-col justify-center items-center border-r border-gray-800 animate-dropdown open">
+        <div className="w-[460px] flex-col justify-center items-center border-r border-gray-800 animate-dropdown open">
             <div className="flex items-center pt-[60px] pb-[10px] pl-[20px] text-xl text-gray-300 font-[500] bg-[#202c33] gap-5">
                 <IconButton onClick={onClick}>
                     <ArrowBack sx={{ fontSize: '25px', color: 'lightgray' }} />

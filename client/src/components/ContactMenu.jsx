@@ -75,6 +75,7 @@ const ContactMenu = ({ onClick }) => {
             placeholder="Type user name"
           />
         </div>
+        <div className="flex flex-col h-[69vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-[#374045]">
         {allUser.map((user) => (
           <UserListItem
             key={user._id}
@@ -82,6 +83,7 @@ const ContactMenu = ({ onClick }) => {
             handleFunction={() => accessChat(user._id)}
           />
         ))}
+        </div>
       </div>
     </div>
   );

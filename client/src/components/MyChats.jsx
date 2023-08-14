@@ -51,7 +51,7 @@ const MyChats = ({ fetchAgain }) => {
                   ? getSender(loggedUser, chat.users)
                   : chat.chatName}
               </span>
-              <span className={`text-sm ${selectedChat === chat ? "text-white" : "text-gray-400"} font-[400]`}></span>
+              <span className={`text-sm ${selectedChat === chat ? "text-white" : "text-gray-400"} font-[400]`}>{chat?.isGroupChat ? "Group" : chat?.latestMessage.content}</span>
             </div>
           </div>
         </div>
