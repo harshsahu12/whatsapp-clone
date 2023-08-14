@@ -24,8 +24,6 @@ const ChatContainer = ({ setFetchAgain, fetchAgain }) => {
   const [typing, setTyping] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
 
-  const navigate = useNavigate()
-
   const handleExit = async (user1) => {
     if (selectedChat.groupAdmin._id !== user._id && user1._id !== user._id) {
       toast("Only admins can remove someone!");
@@ -49,8 +47,6 @@ const ChatContainer = ({ setFetchAgain, fetchAgain }) => {
 
       user1._id === user._id ? setSelectedChat() : setSelectedChat(data);
       setFetchAgain(!fetchAgain);
-      navigate("/chats")
-
     } catch (error) {
       toast(error.message);
     }

@@ -42,7 +42,6 @@ const GroupInfo = ({ handleFunction, fetchAgain, setFetchAgain, fetchMessages })
             user1._id === user._id ? setSelectedChat() : setSelectedChat(data);
             setFetchAgain(!fetchAgain);
             fetchMessages()
-            navigate("/chats")
           } catch (error) {
             toast(error.message);
           }
