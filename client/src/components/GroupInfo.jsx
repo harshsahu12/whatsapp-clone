@@ -67,7 +67,7 @@ const GroupInfo = ({ handleFunction, fetchAgain, setFetchAgain, fetchMessages })
             },
           };
           const { data } = await axios.put(
-            `${SERVERURL}/api/chat/groupadd`,
+            `${SERVERURL}/chat/groupadd`,
             {
               chatId: selectedChat._id,
               userId: user1._id,
@@ -93,7 +93,7 @@ const GroupInfo = ({ handleFunction, fetchAgain, setFetchAgain, fetchMessages })
             },
           };
           const { data } = await axios.put(
-            `${SERVERURL}/api/chat/rename`,
+            `${SERVERURL}/chat/rename`,
             {
               chatId: selectedChat._id,
               chatName: groupChatName,
@@ -121,7 +121,7 @@ const GroupInfo = ({ handleFunction, fetchAgain, setFetchAgain, fetchMessages })
               Authorization: `Bearer ${user.token}`,
             },
           };
-          const { data } = await axios.get(`${SERVERURL}/api/user?search=${search}`, config);
+          const { data } = await axios.get(`${SERVERURL}/user?search=${search}`, config);
   
           setSearchResult(data);
         } catch (error) {

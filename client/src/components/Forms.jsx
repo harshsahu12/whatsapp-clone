@@ -99,7 +99,7 @@ const Forms = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
       navigate("/chats");
     } catch (err) {
-      toast.error(err.response.data.message);
+      toast.error(err.message);
     }
   };
 

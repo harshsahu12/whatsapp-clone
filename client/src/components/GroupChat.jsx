@@ -69,7 +69,7 @@ const GroupChat = ({ onClick }) => {
                 },
             };
             const { data } = await axios.post(
-                `${SERVERURL}/api/chat/group`,
+                `${SERVERURL}/chat/group`,
                 {
                     name: groupChatName,
                     users: JSON.stringify(selectedUsers.map((u) => u._id)),
@@ -80,7 +80,7 @@ const GroupChat = ({ onClick }) => {
             setChats([data, ...chats]);
             toast.success('New group created');
         } catch (error) {
-            toast.error(error);
+            toast.error(error.message);
         }
     };
 
