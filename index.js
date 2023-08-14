@@ -38,10 +38,10 @@ app.use("/api/message", messageRoute)
 
 if (process.env.NODE_ENV === "production") {
   const prodDirname = path.resolve();
-  app.use(express.static(path.join(prodDirname, "/client")));
+  app.use(express.static(path.join(prodDirname, "/client/dist")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(prodDirname, "client", "index.html"));
+    res.sendFile(path.resolve(prodDirname, "client", "dist", "index.html"));
   });
 } else {
   app.get("/", (req, res) => {
