@@ -26,6 +26,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://whatsapp-clone-api-uiwv.onrender.com",
+      "https://whatsapp-clone-gamma-three.vercel.ap/"
     ],
     credentials: true,
   })
@@ -60,6 +61,7 @@ const io = new Server(server, {
     origin: [
       "http://localhost:5173",
       "https://whatsapp-clone-api-uiwv.onrender.com",
+      "https://whatsapp-clone-gamma-three.vercel.app"
     ],
     credentials: true,
   },
