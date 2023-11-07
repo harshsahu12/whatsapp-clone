@@ -13,7 +13,6 @@ const MyChats = ({ fetchAgain }) => {
   const fetchChats = async () => {
     try {
       if (!user || !user.token) {
-        // Handle the case where the user or token is null or undefined
         console.error("User or token is null or undefined.")
         return
       }
@@ -51,7 +50,7 @@ const MyChats = ({ fetchAgain }) => {
                   ? getSender(loggedUser, chat.users)
                   : chat.chatName}
               </span>
-              <span className={`text-sm ${selectedChat === chat ? "text-white" : "text-gray-400"} font-[400]`}>{chat?.isGroupChat ? "Group" : chat?.latestMessage.content}</span>
+              <span className={`text-sm ${selectedChat === chat ? "text-white" : "text-gray-400"} font-[400]`}>{chat?.isGroupChat ? "Group" : chat?.latestMessage?.content}</span>
             </div>
           </div>
         </div>

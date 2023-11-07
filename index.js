@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
-import { Server } from 'socket.io'
+import { Server } from "socket.io";
 
 // IMPORTED FILES FROM API
 import connectDB from "./api/config/connectDB.js";
@@ -23,7 +23,10 @@ const port = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://whatsapp-clone-6530.onrender.com"],
+    origin: [
+      "http://localhost:5173",
+      "https://whatsapp-clone-6530.onrender.com",
+    ],
     credentials: true,
   })
 );
@@ -33,8 +36,8 @@ app.use(errorHandler);
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 app.use("/api/user", userRoute);
-app.use("/api/chat", chatRoute)
-app.use("/api/message", messageRoute)
+app.use("/api/chat", chatRoute);
+app.use("/api/message", messageRoute);
 
 if (process.env.NODE_ENV === "production") {
   const prodDirname = path.resolve();
@@ -54,10 +57,13 @@ const server = app.listen(port, () => console.log(`Server running on ${port}`));
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: ['http://localhost:5173',"https://whatsapp-clone-6530.onrender.com"],
-    credentials: true
-  }
-})
+    origin: [
+      "http://localhost:5173",
+      "https://whatsapp-clone-6530.onrender.com",
+    ],
+    credentials: true,
+  },
+});
 
 io.on("connection", (socket) => {
   console.log("Connected to socket.io");

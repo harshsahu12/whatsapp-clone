@@ -10,13 +10,12 @@ const Forms = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pic, setPic] = useState("");
-
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (!name || !email || !password) {
-      toast.warn("Please Fill all the Feilds");
+      toast.warn("Please Fill all the Fields");
       return;
     }
 
@@ -37,20 +36,20 @@ const Forms = () => {
         config
       );
 
-      toast.success("Registration successfull");
+      toast.success("Registration successful");
       localStorage.setItem("userInfo", JSON.stringify(data));
       navigate("/chats");
     } catch (err) {
-      toast.error(err.response.data.message);
+      toast.error(err.response.data.message || "An error occurred");
     }
   };
 
   const postDetails = (pics) => {
-    if (pics === undefined) {
+    if (!pics) {
       toast.warn("Please Select an Image!");
       return;
     }
-    console.log(pics);
+
     if (pics.type === "image/jpeg" || pics.type === "image/png" || pics.type === "image/jpg") {
       const data = new FormData();
       data.append("file", pics);
@@ -63,22 +62,19 @@ const Forms = () => {
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
-          console.log(data.url.toString());
         })
         .catch((err) => {
           console.log(err);
         });
     } else {
       toast.warn("Please Select an Image!");
-
-      return;
     }
   };
 
   const handleLogin = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (!email || !password) {
-      toast.warn("Please Fill all the Feilds");
+      toast.warn("Please Fill all the Fields");
       return;
     }
 
@@ -99,7 +95,7 @@ const Forms = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
       navigate("/chats");
     } catch (err) {
-      toast.error(err.message);
+      toast.error(err.message || "An error occurred");
     }
   };
 
