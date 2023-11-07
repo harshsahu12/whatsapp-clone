@@ -57,10 +57,7 @@ const server = app.listen(port, () => console.log(`Server running on ${port}`));
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: [
-      "http://localhost:5173",
-      "https://whatsapp-clone-gamma-three.vercel.app/",
-    ],
+    origin: "https://whatsapp-clone-gamma-three.vercel.app",
     credentials: true,
   },
 });
