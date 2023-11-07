@@ -19,14 +19,13 @@ dotenv.config();
 connectDB();
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 6000;
 
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://whatsapp-clone-api-uiwv.onrender.com",
-      "https://whatsapp-clone-gamma-three.vercel.ap/"
+      "https://whatsapp-clone-api-5y4y.onrender.com"
     ],
     credentials: true,
   })
@@ -60,8 +59,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://whatsapp-clone-api-uiwv.onrender.com",
-      "https://whatsapp-clone-gamma-three.vercel.app"
+      "https://whatsapp-clone-api-5y4y.onrender.com"
     ],
     credentials: true,
   },

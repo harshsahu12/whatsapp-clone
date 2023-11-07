@@ -9,9 +9,8 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Messages from "./Messages"
 import io from 'socket.io-client'
-import { SERVERURL } from "../config/helper"
+import { ENDPOINT, SERVERURL } from "../config/helper"
 
-const ENDPOINT = "https://whatsapp-clone-6530.onrender.com";
 let socket, selectedChatCompare;
 
 const ChatContainer = ({ setFetchAgain, fetchAgain }) => {

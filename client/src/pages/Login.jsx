@@ -24,9 +24,9 @@ const Login = () => {
             </div>
             <div className="bg-[#f9f9fa] p-10 gap-4 flex flex-col justify-center items-center">
                 <h4 className="text-3xl font-thin text-black">Explore</h4>
-                <a className="hover:underline font-normal text-[#4fa797] gap-4 flex flex-col items-center" href="http://harshsahu.netlify.app/">
+                <a className="hover:underline font-normal text-[#4fa797] gap-4 flex flex-col items-center" target="_blank" href="https://my-sanity-portfolio-harshsahu12.vercel.app">
                     <span>Check out more of my prev projects</span>
-                    <img className="w-[400px]" src="assets/harshportfolio.png" alt="" />
+                    <video typeof="video/mp4" loop className="w-[400px]" src="assets/portfolio.mp4" alt="" />
                 </a>
             </div>
         </div>
