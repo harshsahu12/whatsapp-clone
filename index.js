@@ -59,7 +59,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://whatsapp-clone-6530.onrender.com",
+      "https://whatsapp-clone-gamma-three.vercel.app/",
     ],
     credentials: true,
   },
