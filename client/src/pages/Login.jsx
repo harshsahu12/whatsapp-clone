@@ -26,7 +26,7 @@ const Login = () => {
                 <h4 className="text-3xl font-thin text-black">Explore</h4>
                 <a className="hover:underline font-normal text-[#4fa797] gap-4 flex flex-col items-center" target="_blank" href="https://my-sanity-portfolio-harshsahu12.vercel.app">
                     <span>Check out more of my prev projects</span>
-                    <video typeof="video/mp4" loop className="w-[400px]" src="assets/portfolio.mp4" alt="" />
+                    <img className="w-[400px]" src="assets/portfoliosite.png" alt="" />
                 </a>
             </div>
         </div>
