@@ -23,7 +23,7 @@ const port = process.env.PORT || 6000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173","https://whatsapp-clone-32do.onrender.com", "https://whatsapp-clone-6530.onrender.com", "https://whatsapp-clone-xi-ashy.vercel.app/"],    
+    origin: ["http://localhost:5173","https://whatsapp-clone-32do.onrender.com"],    
     credentials: true,
   })
 );
@@ -54,7 +54,7 @@ const server = app.listen(port, () => console.log(`Server running on ${port}`));
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: ["http://localhost:5173", "https://whatsapp-clone-32do.onrender.com", "https://whatsapp-clone-6530.onrender.com", "https://whatsapp-clone-xi-ashy.vercel.app/"],
+    origin: ["http://localhost:5173", "https://whatsapp-clone-32do.onrender.com"],
     credentials: true,
   },
 });

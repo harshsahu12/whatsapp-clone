@@ -1,2 +1,2 @@
-export const SERVERURL = "http://localhost:5000/api"
-export const ENDPOINT = "http://localhost:5000/api";
+export const SERVERURL = "https://whatsapp-clone-32do.onrender.com/api"
+export const ENDPOINT = "https://whatsapp-clone-32do.onrender.com/api";
