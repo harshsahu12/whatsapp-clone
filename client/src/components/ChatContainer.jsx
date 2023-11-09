@@ -6,7 +6,6 @@ import { useEffect, useState } from "react"
 import GroupInfo from "./GroupInfo"
 import { toast } from "react-toastify"
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
 import Messages from "./Messages"
 import io from 'socket.io-client'
 import { ENDPOINT, SERVERURL } from "../config/helper"
@@ -152,6 +151,7 @@ const ChatContainer = ({ setFetchAgain, fetchAgain }) => {
       }
     }, timerLength)
   }
+  
   return (
     <>
       {selectedChat

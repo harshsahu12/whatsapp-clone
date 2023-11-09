@@ -40,6 +40,7 @@ const Forms = () => {
       localStorage.setItem("userInfo", JSON.stringify(data));
       navigate("/chats");
     } catch (err) {
+      console.log(err)
       toast.error(err.response.data.message || "An error occurred");
     }
   };
